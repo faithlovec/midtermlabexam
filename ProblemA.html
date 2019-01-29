@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+</head>
+<body>
+	 <input type="number" placeholder="0" id= "display">
+
+	 <br>
+	 <button onclick="attachNumber(this)">1</button>
+	 <button onclick="attachNumber(this)">2</button>
+	 <button onclick="attachNumber(this)">3</button>
+	 <br>
+	 <button onclick="attachNumber(this)">4</button>
+	 <button onclick="attachNumber(this)">5</button>
+	 <button onclick="attachNumber(this)">6</button>
+	 <br>
+	 <button onclick="attachNumber(this)">7</button>
+	 <button onclick="attachNumber(this)">8</button>
+	 <button onclick="attachNumber(this)">9</button>
+	 <br>
+	 <button onclick="attachNumber(this)">0</button>
+     <button id="nplus" onclick="doadd()"> + </button>
+	 <button id="nsub" onclick="dosubtract()"> - </button>
+	 <br>
+	 <button id="nmultiply" onclick="domultiply()"> * </button>
+	 <button id="ndivide" onclick="dodivide()"> / </button>
+     <button id="nmodulo" onclick="domodulu()"> % </button>
+     <br>
+     <button id="nexponent" onclick="doexponent()"> ^ </button>
+     <button id="nequals" onclick="equals()"> = </button>
+     <button id="nClr" onclick="clear()"> Clr </button>
+
+    <script type="text/javascript">
+
+     let n = document.getElementById("display");
+     let numberholder = parseInt(n.value);
+     let optr;
+
+       function attachNumber(e){
+        	n.value += e.innerHTML;
+       }
+
+       function doadd(){
+       	 optr = "+";
+       	 numberholder = parseInt(n.value);
+       	 n.value = "";
+       }
+       function dosubtract(){
+       	 optr = "-";
+       	 numberholder = parseInt(n.value);
+       	 n.value = "";
+       }
+       function domultiply(){
+       	 optr = "*";
+       	 numberholder = parseInt(n.value);
+       	 n.value = "";
+       }
+       function dodivide(){
+       	 optr = "/";
+       	 numberholder = parseInt(n.value);
+       	 n.value = "";
+       }
+        function domodulu(){
+       	 optr = "%";
+       	 numberholder = parseInt(n.value);
+       	 n.value = "";
+       }
+    
+       function equals(){
+
+       	  switch(optr) {
+       	  	case "+":
+       	  	   n.value = numberholder + parseInt(n.value);
+       	  	   break;
+       	    case "-":
+       	  	   n.value = numberholder - parseInt(n.value);
+       	  	   break;
+       	    case "*":
+       	  	   n.value = numberholder * parseInt(n.value);
+       	  	   break;
+       	    case "/":
+       	  	   n.value = numberholder / parseInt(n.value);
+       	  	   break;
+       	  	 case "%":
+       	  	   n.value = numberholder % parseInt(n.value);
+       	  	   break;
+
+       	    default: 
+       	       break;
+       	  }
+       }
+
+    </script>
+</body>
+</html>
